@@ -1,7 +1,46 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('user-search');
     const userContainer = document.getElementById('user-container');
-    let users = [];  // This will hold all trainers fetched from the backend
+
+    // Hardcoded trainer data
+    let users = [
+        {
+            trainer_id: 1,
+            name: "John Doe",
+            geographic_area: "New York",
+            gender: "Male"
+        },
+        {
+            trainer_id: 2,
+            name: "Jane Smith",
+            geographic_area: "Los Angeles",
+            gender: "Female"
+        },
+        {
+            trainer_id: 3,
+            name: "Mike Lee",
+            geographic_area: "Chicago",
+            gender: "Male"
+        },
+        {
+            trainer_id: 4,
+            name: "Lisa Ray",
+            geographic_area: "Miami",
+            gender: "Female"
+        },
+        {
+            trainer_id: 5,
+            name: "Emma Green",
+            geographic_area: "Austin",
+            gender: "Female"
+        },
+        {
+            trainer_id: 6,
+            name: "Alex Johnson",
+            geographic_area: "San Francisco",
+            gender: "Male"
+        }
+    ];
 
     // Arrays of image paths for male and female users
     const maleImages = [
@@ -54,27 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Function to fetch all users from the backend
-    const fetchAllUsers = () => {
-        fetch('http://127.0.0.1:5000/all-trainers')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Error: ${response.status} - ${response.statusText}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                users = data;  // Store all users in `users`
-                displayUsers(userContainer, users);  // Display only the first 6 users initially
-            })
-            .catch(error => console.error('Error fetching all trainers:', error));
-    };
-
     // Function to handle search functionality
     const handleSearch = (searchTerm) => {
         const filteredUsers = users.filter(user =>
             user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            (user.location && user.location.toLowerCase().includes(searchTerm.toLowerCase()))
+            (user.geographic_area && user.geographic_area.toLowerCase().includes(searchTerm.toLowerCase()))
         );
         displayUsers(userContainer, filteredUsers);  // Display all matching results
     };
@@ -83,8 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const initialize = () => {
         if (!userContainer) return;  // Ensure the container exists
 
-        // Fetch and display the first 6 users initially
-        fetchAllUsers();
+        // Display the first 6 hardcoded users initially
+        displayUsers(userContainer, users);
 
         // Handle search functionality
         if (searchInput) {
@@ -104,5 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
         initialize();
     }
 });
+
 
 
