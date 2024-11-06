@@ -103,24 +103,32 @@
 
         /* Accordion Styling */
         .accordion-item {
-            background: linear-gradient(to right, #904AFD, #E0D1FF);
-            border: none;
-            border-radius: 20px;
-            font-weight: 600;
-            color: #fff;
-            padding: 8px 20px;
-            transition: background 0.3s;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-
+        
+        /* Basic styling for accordion button */
         .accordion-header .accordion-button {
             background-color: #ffffff;
             padding: 15px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
+        /* Active (expanded) accordion button styling */
         .accordion-header .accordion-button:not(.collapsed) {
             color: #904AFD;
             background-color: #f9f9fc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
+        /* Hover effect on accordion button */
+        .accordion-header .accordion-button:hover {
+            background-color: #f3f3f3; /* Slightly darker background on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Light shadow on hover */
+            transform: scale(1.01); /* Slight scaling effect */
+        }
+
 
         /* Footer */
         footer {
