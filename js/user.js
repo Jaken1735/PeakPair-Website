@@ -7,37 +7,55 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             trainer_id: 1,
             name: "John Doe",
-            geographic_area: "New York",
+            geographic_area: "Gärdet, Stockholm",
             gender: "Male"
         },
         {
             trainer_id: 2,
             name: "Jane Smith",
-            geographic_area: "Los Angeles",
+            geographic_area: "Torslanda, Gothenburg",
             gender: "Female"
         },
         {
             trainer_id: 3,
             name: "Mike Lee",
-            geographic_area: "Chicago",
+            geographic_area: "Södermalm, Stockholm",
             gender: "Male"
         },
         {
             trainer_id: 4,
             name: "Lisa Ray",
-            geographic_area: "Miami",
+            geographic_area: "Solna, Stockholm",
             gender: "Female"
         },
         {
             trainer_id: 5,
             name: "Emma Green",
-            geographic_area: "Austin",
+            geographic_area: "Uppsala",
             gender: "Female"
         },
         {
             trainer_id: 6,
             name: "Alex Johnson",
-            geographic_area: "San Francisco",
+            geographic_area: "Södertälje",
+            gender: "Male"
+        },
+        {
+            trainer_id: 7,
+            name: "Jessica Simpson",
+            geographic_area: "Westeros",
+            gender: "Female"
+        },
+        {
+            trainer_id: 8,
+            name: "Louise Clark",
+            geographic_area: "Jönköping",
+            gender: "Female"
+        },
+        {
+            trainer_id: 9,
+            name: "Ted York",
+            geographic_area: "Norrköping",
             gender: "Male"
         }
     ];
