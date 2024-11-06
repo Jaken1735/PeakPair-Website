@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     // Helper function to display a limited number of users
-    const displayUsers = (container, users, limit = 6) => {
+    const displayUsers = (container, users, limit = 9) => {
         container.innerHTML = '';  // Clear previous content
         users.slice(0, limit).forEach(user => {
             container.innerHTML += userCard(user);
