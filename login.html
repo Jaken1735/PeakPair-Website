@@ -33,35 +33,19 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .header .brand {
-            font-size: 24px;
-            font-weight: 600;
-        }
-
         .header .brand img {
             height: 50px;
             width: auto;
         }
 
-        .header .signup-link {
-            font-size: 16px;
-            color: #ffffff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .header .signup-link:hover {
-            color: #E0D1FF;
-        }
-
-        /* Gradient background for login container */
+        /* Gradient background for main container */
         .login-container {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 50px 20px;
-            background: linear-gradient(135deg, #904AFD, #E0D1FF); /* Gradient background */
+            background: linear-gradient(135deg, #904AFD, #E0D1FF);
             color: #ffffff;
         }
 
@@ -83,23 +67,7 @@
             font-size: 24px;
         }
 
-        .form-control {
-            border-radius: 30px;
-            padding: 10px 20px;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
-            transition: border-color 0.3s, box-shadow 0.3s;
-            margin-bottom: 20px; /* Increased spacing between input fields */
-        }
-
-        .form-control:focus {
-            border-color: #00aaff;
-            box-shadow: 0px 0px 8px rgba(0, 122, 255, 0.2);
-            outline: none;
-        }
-
-        .login-button {
+        .role-button {
             background: linear-gradient(135deg, #904AFD, #E0D1FF);
             color: #ffffff;
             font-weight: 600;
@@ -112,26 +80,12 @@
             cursor: pointer;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
             margin-top: 10px;
-            margin-bottom: 15px; /* Additional spacing below the button */
         }
 
-        .login-button:hover {
+        .role-button:hover {
             background: linear-gradient(135deg, #904AFD, #E0D1FF);
             transform: translateY(-2px);
             box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.2);
-        }
-
-        .forgot-password {
-            display: block;
-            margin-top: 10px;
-            color: #904AFD;
-            font-size: 14px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .forgot-password:hover {
-            color: #904AFD;
         }
 
         /* Footer styling */
@@ -141,19 +95,6 @@
             text-align: center;
             padding: 20px 0;
             font-size: 14px;
-        }
-
-        .social-links a {
-            color: #ffffff;
-            margin: 0 10px;
-            font-size: 20px;
-            text-decoration: none;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #00aaff;
-            transform: translateY(-3px);
         }
     </style>
 </head>
@@ -166,18 +107,14 @@
                 <img src="/assets/logo.jpg" alt="PeakPair Logo"> <!-- Replace with actual logo path -->
             </a>
         </div>
-        <a href="signUp1.html" class="login-link">Sign Up</a>
     </header>
 
-    <!-- Login Form Section with Gradient Background -->
+    <!-- Main Section with Role Selection Buttons -->
     <div class="login-container">
         <div class="login-box">
-            <h2>Log In to PeakPair</h2>
-            <form action="/api/login" method="POST">
-                <input type="text" id="username" name="username" class="form-control" placeholder="Username or Email" required>
-                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-                <button type="submit" class="login-button">Log In</button>
-            </form>
+            <h2>Welcome to PeakPair</h2>
+            <button class="role-button" onclick="location.href='userLogin.html'">Go To Client-side</button>
+            <button class="role-button" onclick="location.href='trainerLoginhtml'">Go To Trainer-side</button>
         </div>
     </div>
 
@@ -192,6 +129,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
