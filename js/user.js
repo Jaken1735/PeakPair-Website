@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h5 class="card-title mb-1">${user.name}</h5>
                         <p class="card-text">${user.geographic_area}</p>
                         <p class="card-text text-muted mb-2">Trainer-ID: ${user.trainer_id}</p>
-                        <a href="trainer_profile.html?id=${user.trainer_id}" class="btn btn-primary btn-sm">View Profile</a>
+                        <a href="trainer_profile.html" class="btn btn-primary btn-sm">View Profile</a>
                     </div>
                 </div>
             </div>
