@@ -101,56 +101,38 @@
             color: #FFD700; /* Gold color */
         }
 
-        /* Accordion Styling */
-        .accordion-item {
-            border: 1px solid #ddd;
-            margin-bottom: 15px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        /* Basic styling for accordion button */
-        .accordion-header .accordion-button {
-            background-color: #ffffff;
-            padding: 15px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        /* Active (expanded) accordion button styling */
-        .accordion-header .accordion-button:not(.collapsed) {
-            color: #904AFD;
-            background-color: #f9f9fc;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Hover effect on accordion button */
-        .accordion-header .accordion-button:hover {
-            background-color: #f3f3f3; /* Slightly darker background on hover */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Light shadow on hover */
-            transform: scale(1.01); /* Slight scaling effect */
-        }
-
+        /* Trainer's Insights Section Styling */
         .question-section {
-            background-color: #fff;
+            background-color: #ffffff;
             border-radius: 15px;
-            padding: 20px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 25px;
             margin-top: 20px;
         }
 
         .question-section h4 {
             color: #904AFD;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .prompt {
             font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 1.1em;
         }
 
-        .question {
-            font-weight: 500;
-            margin-bottom: 10px;
+        .answer {
+            color: #6c757d;
+            font-size: 1em;
+            margin-bottom: 15px;
         }
-
 
         /* Footer */
         footer {
-            background-color: #1E1E1E;;
+            background-color: #1E1E1E;
         }
 
         footer a {
@@ -169,7 +151,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="/assets/logo.jpg" alt="PeakPair Logo">
+                <img src="assets/logo.jpg" alt="PeakPair Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -219,74 +201,32 @@
         </div>
     </div>
 
-    <!-- Dropdown with Prompted Questions and Answers -->
-    <div class="container mt-5">
-        <h4 class="mb-3">My Responses</h4>
-        <div class="accordion" id="responsesAccordion">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        What motivates you to work out?
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#responsesAccordion">
-                    <div class="accordion-body">
-                        I’m motivated by the desire to lead a balanced life, both mentally and physically. Helping others reach their goals inspires me every day!
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Describe your ideal training environment.
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#responsesAccordion">
-                    <div class="accordion-body">
-                        My ideal training environment is calm, focused, and full of positive energy. I love a mix of indoor studio sessions and outdoor practices.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        What’s one fitness goal you're proud of achieving?
-                    </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#responsesAccordion">
-                    <div class="accordion-body">
-                        I’m proud of completing my first marathon and helping my clients achieve their personal bests in their fitness journeys.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Trainer's Insights Section with Prompts and Answers -->
-    <div class="question-section mt-5">
-        <h4>Who am I?</h4>
-        <div class="prompt">
-            <strong>What motivates you to work out?</strong>
-        </div>
-        <div class="answer">
-            I’m motivated by the desire to lead a balanced life, both mentally and physically. Helping others reach their goals inspires me every day!
-        </div>
+    <div class="container">
+        <div class="question-section mt-5">
+            <h4>Who am I?</h4>
+            <div class="prompt mb-2">
+                <strong>What motivates you to work out?</strong>
+            </div>
+            <div class="answer mb-3">
+                I’m motivated by the desire to lead a balanced life, both mentally and physically. Helping others reach their goals inspires me every day!
+            </div>
 
-        <div class="prompt">
-            <strong>Describe your ideal training environment.</strong>
-        </div>
-        <div class="answer">
-            My ideal training environment is calm, focused, and full of positive energy. I love a mix of indoor studio sessions and outdoor practices.
-        </div>
+            <div class="prompt mb-2">
+                <strong>Describe your ideal training environment.</strong>
+            </div>
+            <div class="answer mb-3">
+                My ideal training environment is calm, focused, and full of positive energy. I love a mix of indoor studio sessions and outdoor practices.
+            </div>
 
-        <div class="prompt">
-            <strong>What’s one fitness goal you're proud of achieving?</strong>
-        </div>
-        <div class="answer">
-            I’m proud of completing my first marathon and helping my clients achieve their personal bests in their fitness journeys.
+            <div class="prompt mb-2">
+                <strong>What’s one fitness goal you're proud of achieving?</strong>
+            </div>
+            <div class="answer">
+                I’m proud of completing my first marathon and helping my clients achieve their personal bests in their fitness journeys.
+            </div>
         </div>
     </div>
-
 
     <!-- Upcoming Workouts Section -->
     <div class="container mt-5">
@@ -345,5 +285,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
