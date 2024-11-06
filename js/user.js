@@ -44,19 +44,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Arrays of image paths for male and female users
     const maleImages = [
-        "/assets/trainers/male/trainer1_m.png",
-        "/assets/trainers/male/trainer2_m.png",
-        "/assets/trainers/male/trainer3_m.png",
-        "/assets/trainers/male/trainer4_m.png",
-        "/assets/trainers/male/trainer5_m.png"
+        "assets/trainers/male/trainer1_m.png",
+        "assets/trainers/male/trainer2_m.png",
+        "assets/trainers/male/trainer3_m.png",
+        "assets/trainers/male/trainer4_m.png",
+        "assets/trainers/male/trainer5_m.png"
     ];
 
     const femaleImages = [
-        "/assets/trainers/female/trainer1_f.png",
-        "/assets/trainers/female/trainer2_f.png",
-        "/assets/trainers/female/trainer3_f.png",
-        "/assets/trainers/female/trainer4_f.png",
-        "/assets/trainers/female/trainer5_f.png"
+        "assets/trainers/female/trainer1_f.png",
+        "assets/trainers/female/trainer2_f.png",
+        "assets/trainers/female/trainer3_f.png",
+        "assets/trainers/female/trainer4_f.png",
+        "assets/trainers/female/trainer5_f.png"
     ];
 
     // Utility function to get a random image based on gender
