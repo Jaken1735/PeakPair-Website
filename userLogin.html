@@ -93,6 +93,14 @@
             height: 250px; /* Fixed height */
             object-fit: cover; /* Ensures the image covers the area without distortion */
         }
+
+        /* Wildcard styling */
+        .wildcard-footer {
+            background-color: gold;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+        }
     </style>
 </head>
 <body id="homepage">
@@ -138,12 +146,13 @@
         <!-- Carousel for Feed with Hardcoded Content -->
         <div id="carouselFeed" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" id="recommendations-container">
-                <!-- Static content for carousel -->
+                <!-- Original Carousel Item 1 -->
                 <div class="carousel-item active">
                     <div class="row">
+                        <!-- First trainer card -->
                         <div class="col-md-4">
                             <div class="card shadow-sm h-100">
-                                <img src="/assets/trainers/male/trainer1_m.png" class="card-img-top" alt="Trainer John">
+                                <img src="assets/trainers/male/trainer1_m.png" class="card-img-top" alt="Trainer John">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">John Doe</h5>
                                     <p class="card-text">Strength Training, Cardio</p>
@@ -157,9 +166,10 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Second trainer card -->
                         <div class="col-md-4">
                             <div class="card shadow-sm h-100">
-                                <img src="/assets/trainers/female/trainer1_f.png" class="card-img-top" alt="Trainer Jane">
+                                <img src="assets/trainers/female/trainer1_f.png" class="card-img-top" alt="Trainer Jane">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Jane Smith</h5>
                                     <p class="card-text">Yoga, Pilates</p>
@@ -173,9 +183,10 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Third trainer card -->
                         <div class="col-md-4">
                             <div class="card shadow-sm h-100">
-                                <img src="/assets/trainers/male/trainer2_m.png" class="card-img-top" alt="Trainer Mike">
+                                <img src="assets/trainers/male/trainer2_m.png" class="card-img-top" alt="Trainer Mike">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Mike Lee</h5>
                                     <p class="card-text">CrossFit, HIIT</p>
@@ -186,6 +197,65 @@
                                 </div>
                                 <div class="card-footer text-muted small">
                                     Similarity Score: 88%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Carousel Item with more trainers -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <!-- Fourth trainer card -->
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="assets/trainers/female/trainer2_f.png" class="card-img-top" alt="Trainer Lisa">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Lisa Ray</h5>
+                                    <p class="card-text">Pilates, Meditation</p>
+                                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> Location: Miami</p>
+                                    <p class="card-text"><i class="fas fa-dollar-sign"></i> Price: 420 SEK/hour</p>
+                                    <p class="card-text"><i class="fas fa-certificate"></i> Certificates: Yoga Alliance, ISSA</p>
+                                    <a href="/trainer_profile.html?id=4" class="btn btn-primary btn-sm w-100"><i class="fas fa-user"></i> View Profile</a>
+                                </div>
+                                <div class="card-footer text-muted small">
+                                    Similarity Score: 92%
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fifth trainer card (Wildcard) -->
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="assets/trainers/female/trainer3_f.png" class="card-img-top" alt="Trainer Emma">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Emma Green</h5>
+                                    <p class="card-text">Powerlifting, Conditioning</p>
+                                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> Location: Austin</p>
+                                    <p class="card-text"><i class="fas fa-dollar-sign"></i> Price: 520 SEK/hour</p>
+                                    <p class="card-text"><i class="fas fa-certificate"></i> Certificates: NASM, ACSM</p>
+                                    <a href="/trainer_profile.html?id=5" class="btn btn-primary btn-sm w-100"><i class="fas fa-user"></i> View Profile</a>
+                                </div>
+                                <div class="card-footer text-muted small wildcard-footer">
+                                    Wildcard
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sixth trainer card (Wildcard) -->
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="assets/trainers/male/trainer3_m.png" class="card-img-top" alt="Trainer Alex">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Alex Johnson</h5>
+                                    <p class="card-text">Boxing, Strength Training</p>
+                                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> Location: San Francisco</p>
+                                    <p class="card-text"><i class="fas fa-dollar-sign"></i> Price: 480 SEK/hour</p>
+                                    <p class="card-text"><i class="fas fa-certificate"></i> Certificates: CPT, ISSA</p>
+                                    <a href="/trainer_profile.html?id=6" class="btn btn-primary btn-sm w-100"><i class="fas fa-user"></i> View Profile</a>
+                                </div>
+                                <div class="card-footer text-muted small wildcard-footer">
+                                    Wildcard
                                 </div>
                             </div>
                         </div>
