@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const challengeDetailsContainer = document.getElementById('challenge-details');
+
     const challenges = [
         {
             id: 1,
@@ -31,6 +32,15 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     ];
 
+    const trainers = [
+        { trainer_id: 1, name: "John Doe", training_areas: ["CrossFit", "Strength Training"] },
+        { trainer_id: 2, name: "Anna Smith", training_areas: ["Yoga", "Pilates"] },
+        { trainer_id: 3, name: "Mike Johnson", training_areas: ["CrossFit", "HIIT"] },
+        { trainer_id: 30, name: "Emily White", training_areas: ["Yoga", "Mindfulness"] },
+        { trainer_id: 31, name: "Chris Brown", training_areas: ["Yoga", "Meditation"] },
+        { trainer_id: 32, name: "David Green", training_areas: ["CrossFit", "Strength Training"] }
+    ];
+
     const getQueryParams = () => {
         const params = {};
         const queryString = window.location.search.substring(1);
@@ -42,18 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return params;
     };
 
-    const fetchTrainers = async () => {
-        try {
-            const response = await fetch('http://127.0.0.1:5000/all-trainers');
-            const trainers = await response.json();
-            return trainers;
-        } catch (error) {
-            console.error('Error fetching trainers:', error);
-            return [];
-        }
-    };
-
-    const loadChallengeDetails = async () => {
+    const loadChallengeDetails = () => {
         const params = getQueryParams();
         const challengeId = parseInt(params['id']);
         const challenge = challenges.find(ch => ch.id === challengeId);
@@ -83,17 +82,17 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             challengeDetailsContainer.innerHTML = challengeHTML;
 
-            const allTrainers = await fetchTrainers();
             let recommendedTrainers = [];
 
-            if (challenge.id === 1) {
-                recommendedTrainers = allTrainers.filter(trainer => trainer.training_areas.includes('CrossFit'));
-            } else if (challenge.id === 3) {
-                recommendedTrainers = allTrainers.filter(trainer => trainer.trainer_id >= 30);
-            } else if (challenge.id === 4) {
-                recommendedTrainers = allTrainers.filter(trainer => trainer.training_areas.includes('Yoga'));
-            } else {
-                recommendedTrainers = allTrainers;
+            // Select trainers based on challenge requirements
+            if (challenge.id === 1) { // CrossFit trainers
+                recommendedTrainers = trainers.filter(trainer => trainer.training_areas.includes('CrossFit'));
+            } else if (challenge.id === 3) { // Trainers with ID >= 30 (newcomers)
+                recommendedTrainers = trainers.filter(trainer => trainer.trainer_id >= 30);
+            } else if (challenge.id === 4) { // Yoga trainers
+                recommendedTrainers = trainers.filter(trainer => trainer.training_areas.includes('Yoga'));
+            } else { // Default for other challenges
+                recommendedTrainers = trainers;
             }
 
             const recommendedTrainersContainer = document.getElementById('recommended-trainers');
@@ -124,4 +123,5 @@ document.addEventListener('DOMContentLoaded', () => {
         loadChallengeDetails();
     }
 });
+
 
