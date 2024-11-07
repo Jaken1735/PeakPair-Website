@@ -26,15 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="card-subtitle text-muted mb-2">Client: ${routine.user}</p>
                     <p class="card-text">${routine.description}</p>
                 </div>
-                <div class="rating-container mt-3">
-                    <label>Rate this workout:</label>
-                    <div class="rating-stars" data-title="${routine.title}">
-                        ${[1, 2, 3, 4, 5].map(star => `
-                            <span class="star" data-value="${star}">&#9733;</span>
-                        `).join('')}
-                    </div>
-                    <div class="rating-feedback" id="feedback-${routine.title}"></div>
-                </div> 
+        
             </div>
         </div>
     `;
