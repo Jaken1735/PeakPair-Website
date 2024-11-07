@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             trainer_id: 2,
             name: "Jane Smith",
-            geographic_area: "Torslanda, Gothenburg",
+            geographic_area: "Vasastan, Stockholm",
             gender: "Female"
         },
         {
@@ -37,25 +37,25 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             trainer_id: 6,
             name: "Alex Johnson",
-            geographic_area: "Södertälje",
+            geographic_area: "Södermalm, Stockholm",
             gender: "Male"
         },
         {
             trainer_id: 7,
             name: "Jessica Simpson",
-            geographic_area: "Westeros",
+            geographic_area: "Östermalm, Stockholm",
             gender: "Female"
         },
         {
             trainer_id: 8,
             name: "Louise Clark",
-            geographic_area: "Jönköping",
+            geographic_area: "Gamlastan, Stockholm",
             gender: "Female"
         },
         {
             trainer_id: 9,
             name: "Ted York",
-            geographic_area: "Norrköping",
+            geographic_area: "Vasastan, Stockholm",
             gender: "Male"
         }
     ];
