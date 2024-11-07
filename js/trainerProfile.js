@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="card-subtitle text-muted mb-2">Client: ${routine.user}</p>
                     <p class="card-text">${routine.description}</p>
                 </div>
-        
             </div>
         </div>
     `;
