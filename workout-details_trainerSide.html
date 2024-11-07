@@ -15,8 +15,8 @@
         }
 
         .navbar {
-            background-color: #1E1E1E; /* Full grey background */
-            color: white; /* White text color */
+            background-color: #1E1E1E;
+            color: white;
         }
 
         .navbar-brand img {
@@ -24,7 +24,6 @@
             width: auto;
         }
 
-        /* Header Title Styling */
         #workout-title {
             font-size: 2.5em;
             font-weight: 700;
@@ -36,19 +35,16 @@
             color: #904AFD;
         }
 
-        /* Form Labels */
         .form-label {
             font-weight: 600;
             color: #333;
         }
 
-        /* Form Control Styling */
         .form-control {
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Button Styles */
         .btn-warning {
             background: #ffc107;
             color: #333;
@@ -68,7 +64,6 @@
             border-radius: 20px;
         }
 
-        /* Message Box */
         #pendingConfirmation {
             background-color: #904AFD;
             color: white;
@@ -79,7 +74,6 @@
             text-align: center;
         }
 
-        /* Footer */
         footer {
             background: #1E1E1E;
             color: #d1d1d1;
@@ -135,6 +129,7 @@
 
     <!-- Modify Booking Section -->
     <div class="container mt-5">
+        <!-- Hardcoded Workout Details -->
         <h1 id="workout-title" class="mb-3">HIIT Circuit</h1>
         <h3 class="text-muted mb-3" id="workout-trainer">Trainer: Chris Hemsworth</h3>
         <p id="workout-description" class="mb-5">High-Intensity Interval Training for fat loss.</p>
@@ -144,11 +139,11 @@
         <form id="modifyBookingForm">
             <div class="mb-3">
                 <label for="sessionDate" class="form-label">Session Date</label>
-                <input type="date" class="form-control" id="sessionDate" value="">
+                <input type="date" class="form-control" id="sessionDate" value="2024-11-10">
             </div>
             <div class="mb-3">
                 <label for="sessionTime" class="form-label">Session Time</label>
-                <input type="time" class="form-control" id="sessionTime" value="">
+                <input type="time" class="form-control" id="sessionTime" value="10:00">
             </div>
             <div id="action-buttons" class="d-flex justify-content-between mt-4">
                 <button type="button" id="rescheduleButton" class="btn btn-warning" onclick="proposeReschedule()">Propose Reschedule</button>
@@ -203,23 +198,11 @@
     <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
             <p class="mt-3 small">&copy; 2024 PeakPair. All rights reserved.</p>
-
-            <!-- Reset Button in Footer -->
             <button class="btn btn-link text-white small" onclick="resetLocalStorage()">Reset Local Storage</button>
         </div>
     </footer>
 
     <script>
-        // Parse URL parameters to get workout details
-        const urlParams = new URLSearchParams(window.location.search);
-        const title = urlParams.get('title');
-        const trainer = urlParams.get('trainer');
-        const description = urlParams.get('description');
-
-        document.getElementById('workout-title').textContent = title;
-        document.getElementById('workout-trainer').textContent = `Trainer: ${trainer}`;
-        document.getElementById('workout-description').textContent = description;
-
         function proposeReschedule() {
             const newDate = document.getElementById('sessionDate').value;
             const newTime = document.getElementById('sessionTime').value;
