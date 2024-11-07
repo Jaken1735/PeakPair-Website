@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             trainer_id: 5,
             name: "Emma Green",
-            geographic_area: "Uppsala",
+            geographic_area: "Kungsholmen, Stockholm",
             gender: "Female"
         },
         {
