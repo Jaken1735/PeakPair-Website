@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <title>PeakPair - Trainer Dashboard</title>
+    <title>PeakPair - Feed</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
-        /* Modernizing colors and typography */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f4f6f9;
         }
 
         .navbar {
-            background-color: #1E1E1E; /* Full grey background */
-            color: white; /* White text color */
+            background-color: #1E1E1E;
+            color: white;
         }
 
         .navbar-brand img {
@@ -73,7 +71,7 @@
         }
 
         footer {
-            background: #1E1E1E;
+            background: rgba(0, 0, 0, 0.9);
             color: #d1d1d1;
         }
 
@@ -95,28 +93,30 @@
             height: 250px; /* Fixed height */
             object-fit: cover; /* Ensures the image covers the area without distortion */
         }
-    </style>
 
+        /* Wildcard styling */
+        .wildcard-footer {
+            background-color: gold;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
 </head>
-<body id="trainerDashboard">
+<body id="homepage">
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="/assets/logo.jpg" alt="PeakPair Logo">
+                <img src="assets/logo.jpg" alt="PeakPair Logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="trainerLogin.html">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="profileHomeTrainer.html">Profile</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="userLogin.html">Recommendations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="explore.html">Explore</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="challenges.html">Monthly Challenges</a></li>
                 </ul>
             </div>
         </div>
@@ -125,19 +125,130 @@
     <!-- Hero Section -->
     <section class="hero py-5 text-center">
         <div class="container">
-            <h1 class="display-4">Welcome to Your Dashboard</h1>
-            <p class="lead">View recommended clients.</p>
+            <h1 class="display-4">Welcome to Your PeakPair Feed</h1>
+            <p class="lead">Here you can browse your most recommended users!</p>
         </div>
     </section>
 
     <!-- Main content area -->
     <div class="container mt-5">
-        <h3 class="text-center mb-4">Recommended Clients</h3>
+        <h3 class="text-center mb-4">Your Recommended Connections</h3>
 
-        <!-- Carousel for Client Recommendations -->
+        <!-- User Interests and Goals -->
+        <div class="text-center mb-4">
+            <h4>Your Profile Summary</h4>
+            <div id="userDetails">
+                <p id="userInterests">Interests: Weightlifting, Yoga</p>
+                <p id="userGoals">Goals: Build Muscle, Increase Flexibility</p>
+            </div>
+        </div>
+
+        <!-- Carousel for Feed with Hardcoded User Recommendations -->
         <div id="carouselFeed" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" id="recommendations-container">
-                <!-- Dynamic content will be inserted here -->
+                <!-- Carousel Item 1 -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <!-- First user card -->
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="assets/users/male/user1_m.png" class="card-img-top" alt="User John">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">John Doe</h5>
+                                    <p class="card-text">Shared Interests: Weightlifting, Running</p>
+                                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> Location: New York</p>
+                                    <a href="user_profile.html" class="btn btn-primary btn-sm w-100"><i class="fas fa-user"></i> View Profile</a>
+                                </div>
+                                <div class="card-footer text-muted small">
+                                    Match Score: 85%
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Second user card -->
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="assets/users/female/user1_f.png" class="card-img-top" alt="User Jane">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Jane Smith</h5>
+                                    <p class="card-text">Shared Interests: Yoga, Meditation</p>
+                                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> Location: Los Angeles</p>
+                                    <a href="user_profile.html" class="btn btn-primary btn-sm w-100"><i class="fas fa-user"></i> View Profile</a>
+                                </div>
+                                <div class="card-footer text-muted small">
+                                    Match Score: 90%
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Third user card -->
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="assets/users/male/user2_m.png" class="card-img-top" alt="User Mike">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Mike Lee</h5>
+                                    <p class="card-text">Shared Interests: HIIT, CrossFit</p>
+                                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> Location: Chicago</p>
+                                    <a href="user_profile.html" class="btn btn-primary btn-sm w-100"><i class="fas fa-user"></i> View Profile</a>
+                                </div>
+                                <div class="card-footer text-muted small">
+                                    Match Score: 88%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Carousel Item with more users -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <!-- Fourth user card -->
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="assets/users/female/user2_f.png" class="card-img-top" alt="User Lisa">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Lisa Ray</h5>
+                                    <p class="card-text">Shared Interests: Pilates, Meditation</p>
+                                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> Location: Miami</p>
+                                    <a href="user_profile.html" class="btn btn-primary btn-sm w-100"><i class="fas fa-user"></i> View Profile</a>
+                                </div>
+                                <div class="card-footer text-muted small">
+                                    Match Score: 92%
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fifth user card (Wildcard) -->
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="assets/users/female/user3_f.png" class="card-img-top" alt="User Emma">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Emma Green</h5>
+                                    <p class="card-text">Shared Interests: Conditioning, Powerlifting</p>
+                                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> Location: Austin</p>
+                                    <a href="user_profile.html" class="btn btn-primary btn-sm w-100"><i class="fas fa-user"></i> View Profile</a>
+                                </div>
+                                <div class="card-footer text-muted small wildcard-footer">
+                                    Wildcard
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sixth user card (Wildcard) -->
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="assets/users/male/user3_m.png" class="card-img-top" alt="User Alex">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Alex Johnson</h5>
+                                    <p class="card-text">Shared Interests: Boxing, Strength Training</p>
+                                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> Location: San Francisco</p>
+                                    <a href="user_profile.html" class="btn btn-primary btn-sm w-100"><i class="fas fa-user"></i> View Profile</a>
+                                </div>
+                                <div class="card-footer text-muted small wildcard-footer">
+                                    Wildcard
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Carousel Controls -->
@@ -155,93 +266,12 @@
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
-            <p class="mt-3 small">&copy; 2024 Fitness Platform. All rights reserved.</p>
+            <p class="mt-3 small">&copy; 2024 PeakPair. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Image pool and counters for male and female images
-        const maxImages = 5; // Assuming you have 5 images per gender
-        let maleImageCounter = 0;
-        let femaleImageCounter = 0;
-
-        // Function to fetch and display recommended clients for the trainer
-        function fetchRecommendedClients(trainerId) {
-            fetch(`http://127.0.0.1:5000/recommendations/trainer/${trainerId}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Error: ${response.status} - ${response.statusText}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const container = document.getElementById('recommendations-container');
-                    container.innerHTML = '';  // Clear existing content
-
-                    // Group clients into chunks of 3 for each carousel item
-                    const chunks = [];
-                    for (let i = 0; i < data.length; i += 3) {
-                        chunks.push(data.slice(i, i + 3));
-                    }
-
-                    // Create carousel items, each containing up to 3 clients
-                    chunks.forEach((chunk, index) => {
-                        const activeClass = index === 0 ? 'active' : '';
-                        let clientsHTML = '';
-
-                        chunk.forEach(client => {
-                            let imagePath;
-
-                            if (client.gender === 'Male') {
-                                // Cycle through male images without repetition until all are used
-                                imagePath = `/assets/users/male/user${(maleImageCounter % maxImages) + 1}_m.png`;
-                                maleImageCounter++;
-                            } else {
-                                // Cycle through female images without repetition until all are used
-                                imagePath = `/assets/users/female/user${(femaleImageCounter % maxImages) + 1}_f.png`;
-                                femaleImageCounter++;
-                            }
-
-                            console.log('ImagePath:', imagePath);
-                            clientsHTML += `
-                                <div class="col-md-4">
-                                    <div class="card shadow-sm h-100">
-                                        <img src='${imagePath}' class="card-img-top" alt="${client.name}">
-                                        <div class="card-body d-flex flex-column">
-                                            <h5 class="card-title">${client.name}</h5>
-                                            <p class="card-text">Experience Level: ${client.experience_level}</p>
-                                            <p class="card-text">Location: ${client.geographic_area}</p>
-                                            <p class="card-text">Areas of Interest: ${client.training_areas_of_interest}</p>
-                                            <p class="card-text">Price limit: ${client.max_price_per_hour}</p>
-                                            <a href="/user_profile.html?id=${client.user_id}" class="btn btn-primary mt-auto"><i class="fas fa-user"></i> View Profile</a>
-                                        </div>
-                                        <div class="card-footer text-muted small">
-                                            Similarity Score: ${(client.similarity * 100).toFixed(2)}%
-                                        </div>
-                                    </div>
-                                </div>`;
-                        });
-
-                        // Add the carousel item with the 3 cards inside
-                        container.innerHTML += `
-                            <div class="carousel-item ${activeClass}">
-                                <div class="row">
-                                    ${clientsHTML}
-                                </div>
-                            </div>`;
-                    });
-                })
-                .catch(error => console.error('Error fetching recommended clients:', error));
-        }
-
-        // Initial fetch for recommended clients on page load
-        document.addEventListener("DOMContentLoaded", function() {
-            const trainerId = 1; // Use actual trainer ID based on the logged-in trainer's data
-            fetchRecommendedClients(trainerId);
-        });
-</script>
 </body>
 </html>
 
