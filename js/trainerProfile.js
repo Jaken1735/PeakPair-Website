@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p </p>
                 </div>
                 <div class="mt-auto">
-                    <button class="btn btn-secondary btn-sm" onclick="goToDetails('${routine.title}', '${routine.user}', '${routine.description}')">
+                    <button class="btn btn-secondary btn-sm" onclick="location.href='workout-details_trainerSide.html'"">
                         View Details
                     </button>
                 </div>
